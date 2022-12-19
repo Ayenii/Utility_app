@@ -1,0 +1,393 @@
+body{
+    margin: 0;
+    padding: 0px;
+    background: linear-gradient(110deg, #444441 60%, black 60%);
+    height: 100vh;
+    color:white;
+    overflow: auto;
+    justify-content: space-between;
+    min-width: 1000px;
+    min-height:1000px;
+  }  
+
+  .center{
+    background: rgba(0,0,0,.25);
+    font-family: sans-serif;
+    border-style:solid;
+    border-color:white;
+  }
+
+  .center-pos{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    border-bottom-right-radius: 60px;
+    border-top-left-radius: 60px;
+  }
+  img{
+    border-radius:50%;
+  }
+  .query-redirect{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background: black;
+    border:white;
+    border-style:solid;
+    color:white;
+    float:left;
+    border-radius:60px;
+    width:200px;
+    height:50px;
+  }
+  .query-redirect:hover{
+    background:white;
+    border:black;
+    color:black;
+    transition: 1s;
+  }
+/*--------------------------------------------------------------------*/
+/* Main panel styling */
+/*--------------------------------------------------------------------*/
+  .display-bar-main{
+    display:flex;
+    justify-content: space-around;
+    float:right;
+    flex-wrap:wrap;
+    top: 80px;
+    right: 40px;
+    width:1550px;
+    margin-right:10px;
+    padding:10px;
+    border:none;
+    background:rgba(255,255,255,.25);
+  }
+  .main-brief{
+    display:flex;
+    float:right;
+    width:600px;
+    height:200px;
+    border-radius:60px;
+    background: rgba(0,0,0,1);
+    border-width:1px;
+  }
+  .main-detail{
+    display:flex;
+    float:left;
+    Overflow:auto;
+    background: rgba(0,0,0,1);
+    margin-bottom:10px;
+    margin-top:60px;
+    width:1200px;
+    height:250px;
+    border-width:1px;
+  }
+  .title{
+    font:bold,large;
+    color:Grey;
+  }
+  .description{
+    color:white;
+  }
+
+  .main-location{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    margin-top: 40px; 
+    margin-left: 20px;
+    background:black;
+    border-width:1px;
+  }
+/*--------------------------------------------------------------------*/
+/* Bottom bar display */
+/*--------------------------------------------------------------------*/
+.display-bar-bottom{
+  margin-top:40px;
+  display:flex;
+  justify-content:space-around;
+  height:275px;
+  width: 1550px;
+  border-radius:60px;
+  overflow:auto;
+}
+
+.inner-bottom-display{
+  background: rgba(0,0,0,.5);
+  width: 150px;
+  height:240px;
+  display:inline-block;
+  margin-bottom:30px; 
+  border-radius:50px;
+  border-width:1px;
+}
+/*--------------------------------------------------------------------*/
+  /* Left Pane styling */
+/*--------------------------------------------------------------------*/
+  .display-bar-left{
+    display:flex;
+    flex-direction:column;
+    justify-content: space-around;
+    float:left;
+    top:80px;
+    left:20px;
+    width:150px;
+    height:500px;
+    margin-left:100px;
+    margin-top:30px;
+    padding:0px;
+    border:none;
+    border-radius:60%;
+  }
+  .display-left-button{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background: black;
+    border:white;
+    border-style:solid;
+    color:white;
+    float:left;
+    border-radius:50px;
+    width:100px;
+    height:100px;
+    margin-left:25px;
+  }
+  .display-left-button span{
+    right:-20px;
+  }
+  .display-left-button:hover{
+    background:white;
+    border:black;
+    color:black;
+    transition: 1s;
+  }
+
+/*--------------------------------------------------------------------*/
+/* Display bar for user query history */
+/*--------------------------------------------------------------------*/
+  .query-history{
+    background:black;
+    float:left;
+    margin-top:27px;
+    height:300px;
+    width: 300px;
+    border-color:transparent;
+    margin-left:30px;
+    overflow:auto;
+  } 
+  .history-redirect-button{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background: black;
+    border:white;
+    border-style:solid;
+    color:white;
+    float:left;
+    border-radius:60px;
+    width:200px;
+    height:75px;
+    margin-left:30px;
+  }
+  .history-redirect-button:hover{
+    background:white;
+    border:black;
+    color:black;
+    transition: 1s;
+  }
+/*--------------------------------------------------------------------*/
+  /*Styling for Query page*/
+/*--------------------------------------------------------------------*/
+  .query-format{
+    width:1000px;
+    height:700px;
+    overflow:auto;
+    background:grey;
+  }
+/*--------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------*/
+  .center h1,.center h2,.center h3{
+    text-align: center;
+    padding: 0 0 5px 0;
+    border-bottom: 1px solid silver;
+  }
+
+  .center form{
+    padding: 0 40px;
+    background: transparent;
+    box-sizing: border-box;
+  }
+
+  form .txt_field{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+  }
+
+  .txt_field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+  }
+
+  .txt_field label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+  }
+
+  .txt_field span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: #2691d9;
+    transition: .5s;
+  }
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+    top: -8px;
+    color: white;
+}
+
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before{
+    width:100%;
+}
+
+.pass{
+    margin: -5px 0 20px 5px;
+    color: whitesmoke;
+    cursor: pointer;
+}
+.pass:hover{
+    text-decoration: underline;
+}
+
+input[type="submit"]{
+    width:100%;
+    height: 50px;
+    border: 1px solid;
+    background: black;
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type="submit"]:hover{
+    border-color:black;
+    background:white;
+    color:black;
+    transition: 1s;
+}
+
+.signup_link{
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: grey;
+}
+
+.signup_link a{
+    color: red;
+    text-decoration: none;
+}
+
+.signup_link a:hover{
+    text-decoration: underline;
+}
+
+.nav_link_style{
+  color: #666666;
+}
+
+.two-col {
+  overflow: hidden;
+}
+
+.two-col .col1,
+.two-col .col2 {
+  width: 49%;
+}
+
+.two-col .col1 {
+  float: left;
+}
+
+.two-col .col2 {
+  float: right;
+}
+
+.two-col label {
+  display: block;
+}
+
+.navbar-custom {
+  background-color: black;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: rgba(255,255,255,.8);
+}
+
+.navbar-custom .navbar-nav .nav-link {
+  color: rgba(255,255,255,.5);
+}
+
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  color: #ffffff;
+}
+
+.btn-primary {
+  color: #212529;
+  background-color: white;
+  border-color: white;
+}
+
+.btn-primary:hover {
+  color: #212529;
+  background-color: white;
+  border-color: white;
+}
+
+.table-display{
+  display:table;
+}
+
+            
+.triangle {
+  width: 0;
+  height: 0;
+  color:white;
+}
+    
+.triangle .triangle-left {
+  border-top: 50px solid transparent;
+  border-right: 100px solid #32557f;
+  border-bottom: 50px solid transparent;
+}
+
+.triangle .triangle-right {
+  border-top: 50px solid transparent;
+  border-left: 100px solid #32557f;
+  border-bottom: 50px solid transparent;
+  background:white;
+}
+
+
+

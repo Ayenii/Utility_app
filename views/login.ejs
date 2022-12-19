@@ -1,0 +1,24 @@
+<%- include('frame.ejs') %>
+    <body>
+        <div class = "center center-pos">
+            <h1>Login</h1>
+            <% if (messages.error) { %>
+                <%= messages.error %>
+            <% } %>
+            <form method="post">
+                <div class="txt_field">
+                    <input type="email" name="email" id="email"required>
+                    <label for="email">username</label>
+                </div>
+                <div class="txt_field">
+                    <input type="password" name="password" id="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="pass">Forgot Password?</div>
+                <input type="submit" value="Login"> 
+                <div class="signup_link">Not a member?
+                    <a href="register">Signup</a>
+                </div>
+            </form>
+        </div>
+    </body>
