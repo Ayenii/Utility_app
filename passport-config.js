@@ -1,30 +1,73 @@
-const LocalStrategy = require('passport-local').Strategy
-const bcrypt = require('bcrypt')
-const Account = require('./models/account')
-
-function initialize(passport, getUserByEmail, getUserById) {
-  const authenticateUser = async (email, password, done) => {
-    const user = getUserByEmail(email)
-    if (user == null) {
-      return done(null, false, { message: 'No user with that email' })
-    }
-
-    try {
-      if (await bcrypt.compare(password, Account.password)) {
-        return done(null, user)
-      } else {
-        return done(null, false, { message: 'Password incorrect' })
+const LocalStrategy = require("passport-local").Strategy;
+const User = require("./models/Account");
+const JwtStrategy = require("passport-jwt").Strategy;
+const { ExtractJwt } = require("passport-jwt")
+module.exports = (passport) => {
+ passport.use(
+   "local-signup",
+    new LocalStrategy(
+    {
+      usernameField: "email",
+      passwordField: "password",
+     },
+     async (email, password, done) => {
+      try{
+         // check if user exists
+         const userExists = await User.findOne({ "email": email });
+         if (userExists) {
+          return done(null, false)
+         }
+         // Create a new user with the user data provided
+         const user = await User.create({ email, password });
+         return done(null, user);
+        }catch (error) {
+          done(error);
+        }
       }
-    } catch (e) {
-      return done(e)
-    }
-  }
+  )
+ );
+ passport.use(
+     "local-login",
+     new LocalStrategy(
+       {
+        usernameField: "email",
+        passwordField: "password",
+       },
+       async (email, password, done) => {
+         try {
+          const user = await User.findOne({ email: email });
+          if (!user) return done(null, false);
+          const isMatch = await user.matchPassword(password);
+          if (!isMatch)
+          return done(null, false);
+          // if passwords match return user
+          return done(null, user);
+         } catch (error) {
+          console.log(error)
+          return done(error, false);
+         }
+       }
+     )
+);
+passport.use("jwt",
+     new JwtStrategy(
+       {
+         jwtFromRequest: ExtractJwt.fromHeader("authorization"),
+         secretOrKey: process.env.SESSION_SECRET,
+       },
+       async (jwtPayload, done) => {
+         try {
+           // Extract user
+           const user = jwtPayload.user;
+           done(null, user);
+         } catch (error) {
+           done(error, false);
+         }
+       }
+     )
+   );
 
-  passport.use(new LocalStrategy({ usernameField: 'email' }, authenticateUser))
-  passport.serializeUser((user, done) => done(null, user.id))
-  passport.deserializeUser((id, done) => {
-    return done(null, getUserById(id))
-  })
 }
 
-module.exports = initialize
+
+
