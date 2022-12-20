@@ -68,6 +68,3 @@ passport.use("jwt",
    );
 
 }
-
-
-
