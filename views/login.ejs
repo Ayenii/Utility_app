@@ -2,17 +2,15 @@
     <body>
         <div class = "center center-pos">
             <h1>Login</h1>
-            <% if (messages.error) { %>
-                <%= messages.error %>
-            <% } %>
-            <form method="post">
+           
+            <form method="POST" action="/login">
                 <div class="txt_field">
-                    <input type="email" name="email" id="email"required>
-                    <label for="email">username</label>
+                    <input type="text" name="username" required>
+                    <label for="username">username</label>
                 </div>
                 <div class="txt_field">
-                    <input type="password" name="password" id="password" required>
-                    <label for="password">Password</label>
+                    <input type="password" name="password" required>
+                    <label for="password">password</label>
                 </div>
                 <div class="pass">Forgot Password?</div>
                 <input type="submit" value="Login"> 

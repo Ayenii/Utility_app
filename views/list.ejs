@@ -1,0 +1,43 @@
+<%- include('frame.ejs') %>
+
+<body>
+    <div class="Container">
+        <div class="display-feed">
+            <h1>Pass Down Log</h1>
+
+        </div>
+        <div class="ewaform">
+            <form method="POST" action="/login">
+                <div class="two-col">
+                    <div class="txt_field col1">
+                        <input type="text" name="EWA" required>
+                        <label for="EWA">EWA#</label>
+                    </div>
+                
+                    <div class="txt_field col2">
+                        <input type="text" name="summary" required>
+                        <label for="summary">summary</label>
+                    </div>
+                </div>
+                <div class="two-col">
+                    <div class="txt_field col1">
+                        <input type="text" name="EWA" required>
+                        <label for="EWA">EWA#</label>
+                    </div>
+                
+                    <div class="txt_field col2">
+                        <input type="text" name="summary" required>
+                        <label for="summary">summary</label>
+                    </div>
+                </div>
+                <div class="pass">Forgot Password?</div>
+                <input type="submit" value="Login"> 
+                <div class="signup_link">Not a member?
+                    <a href="register">Signup</a>
+                </div>
+            </form>
+        </div>
+                
+
+    </div>
+</body>

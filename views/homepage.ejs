@@ -1,0 +1,23 @@
+<%- include('frame.ejs') %>
+
+<body>
+    <div class = "center center-pos">
+        <h1>Login</h1>
+       
+        <form method="POST" action="/login">
+            <div class="txt_field">
+                <input type="text" name="username" required>
+                <label for="username">username</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="password" required>
+                <label for="password">password</label>
+            </div>
+            <div class="pass">Forgot Password?</div>
+            <input type="submit" value="Login"> 
+            <div class="signup_link">Not a member?
+                <a href="register">Signup</a>
+            </div>
+        </form>
+    </div>
+</body>

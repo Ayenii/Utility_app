@@ -10,38 +10,29 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/styles.css">
-    <title>Home page</title>
+    <link rel="stylesheet" href="/static/PassDown_UI.css">
     
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-custom">
-        <a class="navbar-brand" href="/"><img src="{{url_for('static',filename='weatherdashlogo.png')}}" width="50" height="50" alt="WeatherDash"></a>
+        <a class="navbar-brand" href="/"><img src="{{url_for('static',filename='weatherdashlogo.png')}}" width="50" height="50" alt="PassDown"><span class="sr-only">(current)</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            
-              <li class="nav-item active">
-                <a class="nav-link" href="register">Registration <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="login">login <span class="sr-only">(current)</span></a>
+          <ul class="navbar-nav mr-auto form-inline">
+            <li class="nav-item active">
+              <a class="nav-link nav-item" href="logout"><button type="button" class="navbar-button" id="logout">Logout</button><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="register"><button type="button" class="navbar-button" id="logout">Register</button><span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="login"><button type="button" class="navbar-button" id="logout">Login</button> <span class="sr-only">(current)</span></a>
+            </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <a class="nav-link" href="search"><button type="button" class="query-redirect" id="search">Location Search</button><span class="sr-only">(current)</span></a>
-          </form>
-          
-            <form class="form-inline my-2 my-lg-0">
-              <a class="nav-link" href="passwordreset"><button type="button" class="query-redirect" id="password_reset">Change Password</button><span class="sr-only">(current)</span></a>
-            </form>
-            <form class="form-inline my-2 my-lg-0">
-              <a class="nav-link" href="logout"><button type="button" class="query-redirect" id="logout">Logout</button><span class="sr-only">(current)</span></a>
-            </form>
-          
         </div>
-      </nav>
+    </nav>
       
   </body>
 </html>
